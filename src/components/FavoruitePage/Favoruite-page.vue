@@ -1,0 +1,12 @@
+<script>
+export default {
+  name: 'FavoruitePage',
+}
+</script>
+
+<template>
+	<div>123</div>
+</template>
+
+<style>
+</style>

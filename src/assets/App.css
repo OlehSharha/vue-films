@@ -101,3 +101,8 @@
 	text-overflow: ellipsis;
 	white-space: wrap;
 }
+
+.favorite {
+	color: #e66465;
+	background-color: #1C4B73;
+}

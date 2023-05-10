@@ -1,8 +1,12 @@
 <script>
-import { getFilms } from '../../api/api'
+import FilmsCart from '../FimlsCart/FilmsCart.vue';
 
 export default {
   name: 'FavoritePage',
+
+  components: {
+    FilmsCart,
+  },
 
   data() {
     return {
@@ -10,25 +14,18 @@ export default {
     }
   },
 
-  async mounted() {
-    try {
-      const result = await getFilms()
-      this.films.push(result)
-      console.log(this.films)
-    } catch (error) {
-      console.error(error)
+  mounted() {
+    const storedFilms = JSON.parse(localStorage.getItem('favoriteFilms')) || [];
+    this.films = storedFilms;
+  },
+  methods: {
+    updateFilms(films) {
+      this.films = films; // Оновити список фільмів у батьківському компоненті
     }
   }
 }
 </script>
 
 <template>
-  <div class="table">
-    <ul class="element">
-      <li class="element" v-for="(item, index) in films" :key="index">
-		<p>{{ item.Title }}</p>
-	<img :src=item.Poster alt="poster" />
-		</li>
-    </ul>
-  </div>
+  <FilmsCart :films="films" @films-updated="updateFilms"/>
 </template>

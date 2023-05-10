@@ -1,7 +1,12 @@
 <script>
 import { getFilms } from '../../api/api'
+import FilmsCart from '../FimlsCart/FilmsCart.vue';
 export default {
   name: 'HomePage',
+  components: {
+    FilmsCart,
+  },
+
   data() {
     return {
       films: []
@@ -17,31 +22,11 @@ export default {
       console.error(error)
     }
   },
-
-	methods: {
-  getPosterUrl(posterPath) {
-    return `https://image.tmdb.org/t/p/original/${posterPath}`;
-  },
-
-  trimText(text, maxLength) {
-      return text.length > maxLength ? text.slice(0, maxLength - 3) + "..." : text;
-    },
-
-  }
 }
 </script>
 
 <template>
-  <div>
-    <ul class="table">
-      <li class="element" v-for="(item, index) in films" :key="index">
-		<img class="poster" :src="getPosterUrl(item.poster_path)" alt="poster" />
-		<p class="title">Title: {{ trimText(item.title, 29) }}</p>
-		<p>Release Date :{{ item.release_date }}</p>
-		<p class="title">Description : {{ trimText(item.overview, 29) }}</p>
-		</li>
-    </ul>
-  </div>
+<FilmsCart :films="films"/>
 </template>
 
 

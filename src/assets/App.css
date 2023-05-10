@@ -90,7 +90,7 @@
   justify-content: center;
   flex-basis: calc((100% - 60px) / 10);
   max-width: 400px;
-  height: 550px; /* фіксована висота карточки */
+  height: 550px;
 }
 
 .poster{

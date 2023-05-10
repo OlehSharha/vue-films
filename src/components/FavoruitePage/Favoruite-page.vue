@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     updateFilms(films) {
-      this.films = films; // Оновити список фільмів у батьківському компоненті
+      this.films = films;
     }
   }
 }

@@ -46,10 +46,10 @@ export default {
     <ul class="table">
       <li class="element" v-for="(item, index) in films" :key="index">
         <img class="poster" :src="getPosterUrl(item.poster_path)" alt="poster" />
-        <p class="title">Title: {{ trimText(item.title, 29) }}</p>
-        <p>Release Date: {{ item.release_date }}</p>
-        <p class="title">Description: {{ trimText(item.overview, 29) }}</p>
-        <button @click="toggleFilmInFavorites(item)" :class="{ 'favorite': isFilmInFavorites(item) }">
+          <p class="title">Title: {{ trimText(item.title, 29) }}</p>
+          <p class="title"> Release Date: {{ item.release_date }}</p>
+        <p class="title" :title="item.overview">Description: {{ trimText(item.overview, 29) }}</p>
+        <button @click="toggleFilmInFavorites(item)" class=" button pulse" :class="{ 'favorite': isFilmInFavorites(item) }">
           {{ isFilmInFavorites(item) ? 'Remove from Favorites' : 'Add to Favorites' }}
         </button>
       </li>

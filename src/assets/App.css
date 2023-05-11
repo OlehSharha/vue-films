@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 /* Нульові стилі для всіх елементів */
 * {
 	margin: 0;
@@ -7,14 +9,16 @@
 
   /* Стилізація тіла документа */
   body {
-	font-family: Arial, sans-serif;
-	font-size: 16px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 24px;
 	line-height: 1.5;
+	background-color: #9198e5;
   }
 
-  .sticky{
+  .sticky {
 	position: sticky;
 	top:0;
+	z-index: 2;
   }
 
   .header {
@@ -24,6 +28,8 @@
 	align-items: center;
 	gap: 50px;
 	background: linear-gradient(#e66465, #9198e5);
+	border-bottom: 1px solid white;
+	z-index: 1;
   }
 
   .link {
@@ -78,31 +84,73 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  background-color: #9198e5;
 }
+
+.table1 {
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #9198e5;
+	width: 400px;
+	height: 800px;
+  }
 
 .element {
 	box-sizing: border-box;
-  text-align: center;
-  margin: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-basis: calc((100% - 60px) / 10);
-  max-width: 400px;
-  height: 550px;
+	text-align: center;
+	margin: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 500px;
+	height: 700px;
+	background-color: #FFF;
+	border-radius: 10px;
+	transition: transform 0.3s ease-in-out;
+	position: sticky;
+	z-index: 1;
+
 }
 
-.poster{
-  height: 400px;
+.element:hover {
+ transform: scale(110%);
+}
+
+.poster {
+	width: 400px;
+	height: 400px;
+	border: none;
+	border-radius: 10px;
 }
 .title {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: wrap;
+	margin-top: 10px;
+}
+
+.button {
+	width: 300px;
+	height: 40px;
+	background-color: white;
+	margin-top: 10px;
+	cursor: pointer;
+	border-radius: 10px;
+	transition: box-shadow 0.3s ease-in-out;
 }
 
 .favorite {
-	color: #e66465;
-	background-color: #1C4B73;
+	color: white;
+	background-color: #0489fd;
+}
+
+.flex-naming {
+	margin: 10px;
+}
+
+.button:hover {
+	box-shadow: 11px 11px 15px 4px rgba(145,152,229,1);
 }

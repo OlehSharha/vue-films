@@ -27,5 +27,11 @@ export default {
 </script>
 
 <template>
-  <FilmsCart :films="films" @films-updated="updateFilms"/>
+  <div class="table1" v-if="films.length === 0">
+    <div>Nothing in favorite<br/> Add something ;) </div>
+    <img src="../../assets/img/icons8-kermit-the-frog-100.svg"/>
+  </div>
+      <FilmsCart :films="films" @films-updated="updateFilms"/>
 </template>
+
+
